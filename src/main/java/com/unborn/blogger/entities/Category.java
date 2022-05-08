@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="categories")
@@ -20,5 +22,8 @@ public class Category {
 
     @Column(name="description", nullable = true)
     private String categoryDescription;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    private Set<Post> posts = new HashSet<Post>();
 
 }

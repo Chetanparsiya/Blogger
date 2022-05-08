@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="users")
@@ -24,4 +26,7 @@ public class User {
     private String email;
 
     private String about;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private Set<Post> posts = new HashSet<Post>();
 }
