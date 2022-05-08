@@ -20,7 +20,7 @@ public class UserDto {
 
     @NotEmpty
     @Size(min = 8, message = "Password min length should be 8 Character!!!")
-    @Pattern(regexp = "/(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/", message = "Password minimum length should be 8 character with small case, uppercase, numbers and Special Symbol !!")
+    //@Pattern(regexp = "/(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/", message = "Password minimum length should be 8 character with small case, uppercase, numbers and Special Symbol !!")
     private String password;
 
     @Email(message = "Email address is not valid!!!")
