@@ -9,6 +9,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -30,5 +32,5 @@ public class PostDto {
 
     private UserDto user;
 
-
+    private Set<CommentDto> comments = new HashSet<>();
 }
